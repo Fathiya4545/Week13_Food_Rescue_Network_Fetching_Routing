@@ -10,7 +10,7 @@ skills.
 2. **Clone your fork** — use *your* username:
 
    ```bash
-   git clone https://github.com/gabischool/Week12_Food_Rescue_Network_Fetching_Routing.git
+   git clone https://github.com/gabischool/Week13_Food_Rescue_Network_Fetching_Routing.git
    cd THIS-REPO
    ```
 
