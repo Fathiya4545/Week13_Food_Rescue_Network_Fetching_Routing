@@ -8,8 +8,11 @@ function Navbar() {
       <span className="site-nav-brand">🥕 Food Rescue Network</span>
 
       <nav className="site-nav-links" aria-label="Primary">
-        {/* Add a Link here that goes to the board:
-              <Link to="/" className="nav-link">Home</Link>  */}
+      
+             <Link to="/" className="nave-link">Home</Link>
+            
+             
+
       </nav>
     </header>
   );

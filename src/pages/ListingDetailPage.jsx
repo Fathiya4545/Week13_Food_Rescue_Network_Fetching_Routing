@@ -1,8 +1,5 @@
 import { useParams, Link } from "react-router-dom";
 
-// useParams reads :listingId from the URL — always a string, which is why our
-// ids are strings. Check "still loading?" first, so a fresh /listings/2 tab
-// doesn't flash "not found" while the fetch is still running.
 function ListingDetailPage({ listings, status }) {
   const { listingId } = useParams();
 

@@ -5,26 +5,45 @@ import Navbar from "./components/Navbar.jsx";
 import BoardPage from "./pages/BoardPage.jsx";
 import ListingDetailPage from "./pages/ListingDetailPage.jsx";
 
-// You work on TWO things in this file — everything else is already built.
-//   1. FETCH   — write the useEffect that loads the data from the API.
-//   2. ROUTING — add the <Routes> so the board and the detail page show up.
+
 function App() {
   const [listings, setListings] = useState([]);
   const [status, setStatus] = useState("loading"); // "loading" | "success" | "error"
 
-  // ---- 1. FETCH ----------------------------------------------------------
-  // Write a useEffect that runs ONCE (empty dependency array []) and calls
-  // getFoodListings(). On success: setListings(data) then setStatus("success").
-  // On failure: setStatus("error").
-  // ↓ your useEffect goes here
+
+
+  useEffect (() =>{
+    const loadListings = async () => {
+      try {
+      const data = await getFoodListings();
+      setListings(data);
+      setStatus("success");
+      }catch (error){
+        setStatus("error");
+       
+        }
+      };
+      loadListings();
+    
+  
+  }, []);
+
+
 
   return (
     <div className="app">
       <Navbar />
 
-      {/* ---- 2. ROUTING ----------------------------------------------------
-          Add a <Routes> block here, with two <Route>s:
- */}
+  
+     <Routes>
+     <Route path="/" element={<BoardPage listings={listings} status={status} />} />
+     <Route path="/listings/:listingId" element={<ListingDetailPage listings={listings} status={status}/>} />
+
+
+     </Routes>
+
+
+
 
       <footer className="board-footer">
         Food Rescue Network is a classroom prototype for learning React. It isn&apos;t a real
